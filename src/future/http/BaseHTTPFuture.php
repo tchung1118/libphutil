@@ -206,7 +206,9 @@ abstract class BaseHTTPFuture extends Future {
    * @task config
    */
   public function getHeaders($filter = null) {
-    $filter = strtolower($filter);
+    if ($filter !== null) {
+      $filter = strtolower($filter);
+    }
 
     $result = array();
     foreach ($this->headers as $header) {

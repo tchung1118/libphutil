@@ -166,7 +166,7 @@ final class PhutilURI extends Phobject {
     if ($this->isGitURI()) {
       $protocol = null;
     } else {
-      if (strlen($auth)) {
+      if ($auth !== null && strlen($auth)) {
         $protocol = nonempty($this->protocol, 'http');
       }
     }

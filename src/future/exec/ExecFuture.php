@@ -758,7 +758,7 @@ final class ExecFuture extends PhutilExecutableFuture {
     if ($max_stdout_read_bytes > 0) {
       $this->stdout .= $this->readAndDiscard(
         $stdout,
-        $this->getStdoutSizeLimit() - strlen($this->stdout),
+        $this->getStdoutSizeLimit() - strlen($this->stdout ?? ''),
         'stdout',
         $max_stdout_read_bytes);
     }
@@ -766,7 +766,7 @@ final class ExecFuture extends PhutilExecutableFuture {
     if ($max_stderr_read_bytes > 0) {
       $this->stderr .= $this->readAndDiscard(
         $stderr,
-        $this->getStderrSizeLimit() - strlen($this->stderr),
+        $this->getStderrSizeLimit() - strlen($this->stderr ?? ''),
         'stderr',
         $max_stderr_read_bytes);
     }
