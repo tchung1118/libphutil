@@ -282,6 +282,9 @@ function phutil_utf8_strlen($string) {
  * @return  int     The console display length of the string.
  */
 function phutil_utf8_console_strlen($string) {
+  if ($string === null) {
+    return 0;
+  }
   // Formatting and colors don't contribute any width in the console.
   $string = preg_replace("/\x1B\[\d*m/", '', $string);
 
