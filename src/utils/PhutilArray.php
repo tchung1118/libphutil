@@ -28,7 +28,7 @@ abstract class PhutilArray
 
 /* -(  Countable Interface  )------------------------------------------------ */
 
-#[\ReturnTypeWillChange]
+  #[\ReturnTypeWillChange]
   public function count() {
     return count($this->data);
   }
@@ -37,7 +37,7 @@ abstract class PhutilArray
 /* -(  Iterator Interface  )------------------------------------------------- */
 
 
-#[\ReturnTypeWillChange]
+  #[\ReturnTypeWillChange]
   public function current() {
     return current($this->data);
   }
@@ -66,7 +66,7 @@ abstract class PhutilArray
 /* -(  ArrayAccess Interface  )---------------------------------------------- */
 
 
-#[\ReturnTypeWillChange]
+  #[\ReturnTypeWillChange]  
   public function offsetExists($key) {
     return array_key_exists($key, $this->data);
   }
